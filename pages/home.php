@@ -1,0 +1,2 @@
+<h1>Home page</h1>
+<p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Recusandae optio commodi praesentium odio provident consequuntur, cumque esse corporis dolores. Architecto veritatis neque animi delectus fuga obcaecati quidem ab dolores illum.</p>
