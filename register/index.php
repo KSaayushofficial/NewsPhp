@@ -1,5 +1,5 @@
 <?php 
-
+require_once "../connection.php";
 $errors = [
       'name' => '',
       'email' => '',
@@ -24,6 +24,35 @@ if (!empty($_POST)) {
                   $old[$key] = $value;
             }
       }
+      $name=$_POST['name'];
+   $namePatterns='/^[a-zA-Z ]+$/';
+    if(!preg_match($namePatterns,$name)){
+         $errors['name']='Name must be alphabets';
+    }
+    $email=$_POST['email'];
+    if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
+        $errors['email']='Invalid email format';
+    }
+    $password=$_POST['password'];
+    if(strlen($password)<6){
+        $errors['password']='Password must be 6 characters';
+    }
+    $confirm_password=$_POST['confirm_password'];
+    if($password!=$confirm_password){
+        $errors['confirm_password']='Password does not match';
+    }
+
+    if(!array_filter($errors)){
+      $gender = $_POST['gender'];
+      $password = md5($password);
+      $sql = "INSERT INTO users(name,email,password,gender) VALUES('$name','$email','$password','$gender')";
+      $result = mysqli_query($conn,$sql);
+      if($result){
+            echo "User registered successfully";
+      } else {
+            echo "Failed to register user";
+      }
+    }
 }
 
 ?>
