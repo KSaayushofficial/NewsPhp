@@ -48,9 +48,11 @@ if (!empty($_POST)) {
       $sql = "INSERT INTO users(name,email,password,gender) VALUES('$name','$email','$password','$gender')";
       $result = mysqli_query($conn,$sql);
       if($result){
-            echo "User registered successfully";
+            $_SESSION['success']= "User registered successfully";
+            header("Location:../login/index.php");
       } else {
-            echo "Failed to register user";
+            $_SESSION['error'] = "Failed to register user";
+            header("Location:../register/index.php");
       }
     }
 }
