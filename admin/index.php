@@ -1,7 +1,17 @@
 <?php 
+require_once "../connection.php";
+
+if(!isset($_SESSION['user']) || $_SESSION['is_login'] != true){
+  header("Location: ../login");
+  exit();
+}
+
+
 $page=$_GET['uri'] ?? 'dashboard';
 $page = str_replace('.php','',$page);
 $page = $page.'.php';
+
+
 ?>
 
 
@@ -26,38 +36,18 @@ $page = $page.'.php';
     </div>
     <ul class="nav flex-column">
       <li class="nav-item">
-        <a class="nav-link active" href="#">
+        <a class="nav-link active" href="<?=url('admin')?>">
           <i class="bi bi-house-door"></i> Dashboard
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="bi bi-graph-up"></i> Analytics
+        <a class="nav-link" href="<?=url('admin/users')?>">
+          <i class="bi bi-graph-up"></i> Users
         </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="bi bi-people"></i> Customers
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="bi bi-cart"></i> Orders
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="bi bi-box"></i> Products
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="bi bi-gear"></i> Settings
-        </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="bi bi-question-circle"></i> Help
+        <a class="nav-link" href="<?=url('admin/logout.php')?>">
+          <i class="bi bi-people"></i> Logout
         </a>
       </li>
     </ul>
@@ -92,10 +82,10 @@ $page = $page.'.php';
           </a>
         </div>
         <div class="user-profile">
-          <img src="https://via.placeholder.com/40" alt="User" class="user-avatar">
+          <img src="https://via.placeholder.com/40" alt="" class="user-avatar">
           <div class="d-none d-md-block">
-            <div class="fw-bold">John Doe</div>
-            <div class="small text-muted">Administrator</div>
+            <div class="fw-bold"><?=$_SESSION['user']['name'];?></div>
+            
           </div>
         </div>
       </div>

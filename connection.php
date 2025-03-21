@@ -25,4 +25,13 @@ return $output;
 
 }
 }
+
+if(!function_exists('url')){
+      function url($url=''){
+            $host = $_SERVER['HTTP_HOST'];
+            $project_name = "bcanews";
+            $url = trim($url,'/');
+            return "http://".$host."/".$project_name."/".$url;
+      }
+}
 ?>
