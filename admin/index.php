@@ -46,6 +46,21 @@ $page = $page.'.php';
         </a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" href="<?=url('admin/profile')?>">
+          <i class="bi bi-person-add"></i> Update Profile
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?=url('admin/category')?>">
+          <i class="bi bi-person-add"></i> Category
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="<?=url('admin/blog')?>">
+          <i class="bi bi-person-add"></i> Blog
+        </a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" href="<?=url('admin/logout.php')?>">
           <i class="bi bi-people"></i> Logout
         </a>

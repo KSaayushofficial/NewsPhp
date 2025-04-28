@@ -1,5 +1,10 @@
 <?php 
 require_once '../connection.php';
+
+// if(!isset($_SESSION['user'])){
+//       header("Location:/bcanews/admin");
+//       exit();
+// }
 $errors = [
       'email' => '',
       'password' => '',
