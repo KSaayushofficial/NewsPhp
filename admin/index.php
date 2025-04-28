@@ -21,14 +21,9 @@ $page = $page.'.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Dashboard</title>
-  <!-- Bootstrap CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <!-- Bootstrap Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
-  <!-- Custom CSS -->
-<link rel="stylesheet" href="../css/admin.css">
 </head>
 <body>
+<<<<<<< HEAD
   <!-- Sidebar -->
   <div class="sidebar" id="sidebar">
     <div class="sidebar-header">
@@ -108,6 +103,9 @@ $page = $page.'.php';
 
     <!-- Dashboard Content -->
 <div class="container-fluid p-4">
+=======
+  <div class="container-fluid p-4">
+>>>>>>> 9a6cddc72def2d7143ed9c8382dd78ccf4f8a852
       <div class="row">
             <div class="col-md-12">
                   <?php
@@ -121,23 +119,5 @@ $page = $page.'.php';
             </div>
       </div>
 </div>
-
-    <!-- Footer -->
-    <footer class="bg-white p-3 text-center">
-      <p class="mb-0 text-muted">© 2023 Admin Dashboard. All rights reserved.</p>
-    </footer>
-  </div>
-
-  <!-- Bootstrap JS Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  
-  <!-- Custom JS -->
-  <script>
-    // Toggle sidebar on mobile
-    document.getElementById('sidebar-toggle').addEventListener('click', function() {
-      document.getElementById('sidebar').classList.toggle('show');
-      document.getElementById('main-content').classList.toggle('pushed');
-    });
-  </script>
 </body>
 </html>
